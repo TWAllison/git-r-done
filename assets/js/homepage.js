@@ -27,6 +27,8 @@ fetch(apiUrl).then(function(response){
         alert("Error: GitHub User Not Found");
     }
 })
+
+
     .catch(function(error){
        alert("unable to connect to GitHub") 
     });
@@ -46,8 +48,9 @@ var displayRepos = function(repos, searchTerm) {
         // format repo name
         var repoName = repos[i].owner.login + "/" + repos[i].name;
 
-        var reopEl = document.createElement("div"); // create a container for each repo
+        var reopEl = document.createElement("a"); // create a container for each repo
         reopEl.classList = "list-item flex-row justify-space-between aligh-center";
+        reopEl.setAttribute("href", "single-repo.html?repo=" + repoName);
 
         //create a span element to hold repo name
         var titleEl = document.createElement("span");
