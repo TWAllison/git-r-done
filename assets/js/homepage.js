@@ -54,6 +54,7 @@ var getFeaturedRepos = function(language) {
         if (response.ok) {
             response.json().then(function(data){
                 console.log(data)
+                displayRepos(data.items, language);
             });
             
         } else {
